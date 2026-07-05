@@ -19,8 +19,11 @@ pip install pandas matplotlib seaborn openpyxl
 
 * **2. Repository File Structure:**
 To execute successfully, maintain the exact verbatim structure as set by the script:
+
 ./data/ — Location of raw csv files (site_inventory.csv, pii_detections.csv, sharing_links.csv, license_assignments.csv).
+
 ./src/ — Contains the processing python script or notebook execution (bcleg_src.py).
+
 ./output/ — Target directory where remediated files are automatically compiled.
 
 * **3. Run the Processing Script:**
