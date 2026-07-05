@@ -7,7 +7,7 @@
 
 
 ## Kindly Note: 
-The provided output file named 'BCLeg_datafiles_updated.xls' has the scanned sites marked with respective labels and descriptors.
+The provided output file named 'BCLeg_datafiles_updated.xlsx' has the scanned sites marked with respective labels and descriptors.
 
 ## Label mapping
 
