@@ -1,0 +1,25 @@
+site_id,site_name,owner,item_count,current_label,has_anonymous_links,external_guests,last_modified,current_label_viz,current_label_viz2,copilot_reach,detection_type,Target_Parent_Label,Target_Descriptor,Target_Copilot_Scoping
+S-001,Corporate Communications,Comms.Lead@leg.bc.ca,4820,Public,No,0.0,2025-11-03,Public,Public,Ingested by Copilot,,Public,None,Fully Included
+S-002,ITD Project Plans,carlo.munoz@leg.bc.ca,12044,Internal,No,2.0,11/4/2025,Internal,Internal,Ingested by Copilot,,Internal,None,Authorized Access Only
+S-003,HR Benefits Enrolment,hr.team@leg.bc.ca,1990,Confidential / All Employees,No,1.0,2025-10-28,Confidential / All Employees,Confidential / All Employees,Ingested by Copilot,"SIN, PII_bundle",Confidential,People,Authorized Access Only (ACL Restructured)
+S-004,Finance Draft Budgets,finance.ops@leg.bc.ca,3310,Highly Confidential / Specific People,No,0.0,Nov 1 2025,Highly Confidential / Specific People,Highly Confidential / Specific People,Ingested by Copilot,BudgetPattern,Restricted,Financial,Excluded Entirely from Copilot Index
+S-005,Hansard – Broadcast Ops,broadcast@leg.bc.ca,8771,Internal,Yes,4.0,2025/11/02,Internal,Internal,Exposed via Link,PII_bundle,Confidential,People,Authorized Access Only (ACL Restructured)
+S-006,Legal Opinions Library,law.clerk@leg.bc.ca,640,Restricted,Yes,3.0,2025-11-05,Restricted,Restricted,Restr-Exposed via Link,Privileged_keyword,Restricted,Legal,Excluded Entirely from Copilot Index
+S-007,Member Services Portal,member.support@leg.bc.ca,15320,,No,0.0,10/30/2025,Unclassified,Unclassified,Ingested by Copilot,,Internal,None,Authorized Access Only
+S-008,Vendor Contracts (active),procurement@leg.bc.ca,2055,Confidential / Anyone (not protected),No,6.0,2025-11-04,Confidential / Anyone (not protected),Confidential / Anyone (not protected),Ingested by Copilot,BudgetPattern,Confidential,Commercial,Authorized Access Only (ACL Restructured)
+S-009,IT Security Runbooks,rob.ashbourne@leg.bc.ca,1208,Confidential,No,0.0,2025-11-01,Confidential,Confidential,Ingested by Copilot,APIKey_Secret,Restricted,Security,Excluded Entirely from Copilot Index
+S-010,Committee Closed Sessions,clerk.committees@leg.bc.ca,930,Restricted,No,1.0,2025-11-06,Restricted,Restricted,Restr. & Safe,,Restricted,Proceedings,Excluded Entirely from Copilot Index
+S-011,General Staff Share,allstaff@leg.bc.ca,42110,Internal,Yes,11.0,2025-10-22,Internal,Internal,Exposed via Link,,Internal,None,Authorized Access Only (Revoke Links)
+S-012,Constituency Office Files,co.admin@leg.bc.ca,7740,Confidential / Trusted People,No,2.0,2025-11-03,Confidential / Trusted People,Confidential / Trusted People,Ingested by Copilot,"PII_bundle, SIN",Confidential,People,Authorized Access Only (ACL Restructured)
+S-013,ITD Project Plans,Carlo.Munoz@leg.bc.ca ,12051,Internal,No,2.0,2025-11-04,Internal,Internal,Ingested by Copilot,,Internal,None,Authorized Access Only
+S-014,Payroll Records,payroll@leg.bc.ca,880,Highly Confidential / All Employees,No,0.0,2025-10-19,Highly Confidential / All Employees,Highly Confidential / All Employees,Ingested by Copilot,"SIN, CreditCard",Confidential,People,Authorized Access Only (ACL Restructured)
+S-015,Public Job Postings,recruitment@leg.bc.ca,205,General,No,0.0,2025-11-02,General,General,Ingested by Copilot,,Public,None,Fully Included
+S-016,Audit and Review Findings,internal.audit@leg.bc.ca,470,Confidential,No,0.0,2025-11-04,Confidential,Confidential,Ingested by Copilot,Audit_finding,Confidential,Audit,Authorized Access Only (ACL Restructured)
+S-017,Leadership Briefing Notes,clerk.office@leg.bc.ca,355,Internal,No,0.0,2025-11-05,Internal,Internal,Ingested by Copilot,Privileged_keyword,Restricted,Proceedings,Excluded Entirely from Copilot Index
+S-018,Training Materials,training@leg.bc.ca,3900,Internal,No,1.0,2025-10-31,Internal,Internal,Ingested by Copilot,,Internal,None,Authorized Access Only
+S-019,Network Diagrams and Plans,infra.team@leg.bc.ca,1140,Internal,Yes,0.0,2025-11-01,Internal,Internal,Exposed via Link,,Confidential,Security,Authorized Access Only (ACL Restructured)
+S-020,Personnel Reorg Planning,chro.office@leg.bc.ca,210,Confidential,No,0.0,2025-11-06,Confidential,Confidential,Ingested by Copilot,PII_bundle,Restricted,Proceedings,Excluded Entirely from Copilot Index
+S-021,Expense Claims Archive,finance.ops@leg.bc.ca,6620,Internal,No,0.0,10/15/2025,Internal,Internal,Ingested by Copilot,BudgetPattern,Confidential,Financial,Authorized Access Only (ACL Restructured)
+S-022,Old Records (pre-2015),records@leg.bc.ca,28900,,Yes,0.0,2014-12-30,Unclassified,Unclassified,Exposed via Link,PII_bundle,Confidential,People,Authorized Access Only (ACL Restructured)
+S-023,Media Releases Approved,Comms.Lead@leg.bc.ca,1410,Public,No,0.0,2025-11-04,Public,Public,Ingested by Copilot,,Public,None,Fully Included
+S-024,Incident Response Active,soc@leg.bc.ca,95,Restricted,No,0.0,2025-11-06,Restricted,Restricted,Restr. & Safe,Security_sensitive,Restricted,Security,Excluded Entirely from Copilot Index

@@ -1,0 +1,32 @@
+
+# **EXECUTIVE DATA GOVERNANCE & RISK REPORT**
+
+### **1. Legacy Data Hygiene & Baseline State**
+
+* **Initial Discovery:** An audit of the baseline configuration shown in `Viz1_Raw files access.png` revealed high taxonomy fragmentation across the Assembly's storage infrastructure, including multiple unclassified or vaguely categorized repositories.
+* **Data Cleaning Phase:** Programmatic remediation standardized structural metadata and department strings as shown in `Viz2_Post cleanup files access.png`. While data classification remained unchanged during this initial pass, it successfully isolated structural data corruption to prepare for policy mapping.
+
+### **2. Pre-Mitigation Threat Landscape (The Blast Radius)**
+
+As documented in `Viz3_Current label_affected sites and files payload.png`, running Microsoft 365 Copilot against the unmitigated infrastructure creates a critical data leakage vector:
+
+* **Operational Exposure:** **4 high-risk sites** are actively exposing data via anonymous public links, and **1 Restricted site** is fully leaked via active sharing permissions.
+* **Payload Severity:** This vulnerability exposes a catastrophic total of **80,921 unmanaged files** to the global indexing scope, making highly sensitive credentials and PII completely searchable across the organization.
+
+### **3. Post-Mitigation Compliance Target State**
+
+By programmatically implementing the four-tier framework from `INFORMATION_PROTECTION.pptx` via `bcleg_src.py`, the repository footprint shifts to a strictly controlled architecture as mapped out in `Viz4_Updated label_affected sites and files payload.png`:
+
+| Sensitivity Tier | Protected Repositories | Protected Document Volume | Access Boundary Strategy |
+| --- | --- | --- | --- |
+| **Confidential** | 9 Sites | 58,566 Files | Inherited sensitivity tags; responses track ACL permissions. |
+| **Restricted** | 7 Sites | 6,748 Files | Complete exclusion from indexing; Zero LLM ingestion. |
+| **Internal** | 5 Sites | 85,425 Files | Mandatory anonymous link revocation; restricted to internal staff. |
+| **Public** | 3 Sites | 6,435 Files | Open ingestion; authorized for general AI availability. |
+
+### **4. Final Copilot Boundary Enforcement**
+
+The final verification layer illustrated in `Viz5_Updated_Copilot access files payload.png` confirms full security perimeter enforcement prior to go-live:
+
+* **Total Isolation:** **6,748 ultra-sensitive files** (including verified SIN logs, credentials, and legal records) are programmatically **Excluded Entirely from the Index**.
+* **Access Control Containment:** **143,991 items** spanning Internal and Confidential tiers have their network boundaries locked down under strict "Authorized Access Only" parameters, completely mitigating unauthorized semantic indexing.

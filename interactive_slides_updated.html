@@ -1,0 +1,620 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M365 Copilot Pre-Deployment Briefing</title>
+    <!-- Premium Google Fonts for academic and authoritative executive presence -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* ==================== 1. SYSTEM SETUP & RESET ==================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #e2e8f0; /* Outer page container color */
+            display: grid;
+            gap: 30px;
+            grid-template-columns: 1fr;
+            min-height: 100vh;
+            padding: 40px 0;
+            place-items: center;
+        }
+
+        /* 
+           Slide Container: Mandated 1280px by 720px footprint.
+           Off-white background (#f8fafc) mimics ultra-premium matte presentation paper.
+           Optimized for flawless PDF/Slide print export.
+        */
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            padding: 50px 60px;
+            position: relative;
+        }
+
+        /* Subtle, professional executive accent lines for layout framing */
+        .slide-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3a8a 0%, #0d9488 100%);
+        }
+
+        /* ==================== 2. EXECUTIVE TYPOGRAPHY ==================== */
+        .slide-container h1,
+        .slide-container h2,
+        .slide-container h3,
+        .slide-container .slide-title {
+            color: #0f172a; /* Slate 900: High-contrast primary navy */
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .slide-container p,
+        .slide-container li,
+        .slide-container td,
+        .slide-container th,
+        .slide-container .slide-pretitle {
+            color: #334155; /* Slate 700: Readable dark neutral grey */
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 14.5px;
+            line-height: 1.5;
+        }
+
+        /* Consistent Slide Header System */
+        .slide-header {
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+            width: 100%;
+        }
+
+        .slide-pretitle {
+            color: #0d9488; /* Corporate teal accent */
+            font-family: 'JetBrains Mono', monospace !important;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .slide-title {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-top: 4px;
+        }
+
+        .slide-meta {
+            color: #64748b;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10.5px;
+            line-height: 1.3;
+            text-align: right;
+        }
+
+        /* ==================== 3. STRUCTURES & GRIDS ==================== */
+        .content-area {
+            display: flex;
+            flex-grow: 1;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 0;
+            width: 100%;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 40px;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Left-side Text panel structure */
+        .executive-panel {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .panel-heading {
+            align-items: center;
+            color: #1e3a8a;
+            display: flex;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            gap: 10px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .panel-heading i {
+            color: #0d9488;
+        }
+
+        /* Standard Bullet Guidelines */
+        .bullet-list {
+            list-style: none;
+        }
+
+        .bullet-list li {
+            font-size: 14px;
+            line-height: 1.55;
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .bullet-list li::before {
+            content: '■'; /* Square academic bullet */
+            color: #0d9488;
+            font-size: 8px;
+            left: 4px;
+            position: absolute;
+            top: 2px;
+        }
+
+        .bullet-list li strong {
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        /* KPI Block Styling */
+        .kpi-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .kpi-card {
+            background-color: #f8fafc;
+            border-left: 3px solid #1e3a8a;
+            border-radius: 4px;
+            padding: 12px;
+        }
+
+        .kpi-val {
+            color: #1e3a8a;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .kpi-label {
+            color: #64748b;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        /* Image Wrapper */
+        .image-wrapper {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            max-height: 420px;
+            overflow: hidden;
+            padding: 12px;
+            width: 100%;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Prevents visual distortion */
+        }
+
+        /* ==================== 4. TILE GRID LAYOUT (Slide 2) ==================== */
+        .tiled-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            height: 100%;
+            width: 100%;
+        }
+
+        .policy-tile {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 24px 20px;
+            height: 420px;
+            transition: all 0.2s ease;
+        }
+
+        /* Highlight colored top boundaries matching corporate frameworks */
+        .policy-tile.restricted { border-top: 4px solid #dc2626; }
+        .policy-tile.confidential { border-top: 4px solid #ea580c; }
+        .policy-tile.internal { border-top: 4px solid #0284c7; }
+        .policy-tile.public { border-top: 4px solid #059669; }
+
+        .tile-header {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .tile-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            width: max-content;
+        }
+
+        .restricted .tile-tag { background-color: #fee2e2; color: #b91c1c; }
+        .confidential .tile-tag { background-color: #ffedd5; color: #c2410c; }
+        .internal .tile-tag { background-color: #e0f2fe; color: #0369a1; }
+        .public .tile-tag { background-color: #d1fae5; color: #047857; }
+
+        .tile-name {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .tile-desc {
+            color: #475569;
+            font-size: 12.5px;
+            line-height: 1.4;
+        }
+
+        .tile-action {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            color: #0f172a;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* ==================== 5. EMERGENCY TABLE LAYOUT (Slide 3) ==================== */
+        .patch-table {
+            border-collapse: collapse;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .patch-table th {
+            background-color: #f1f5f9;
+            color: #0f172a;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding: 12px 14px;
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        .patch-table td {
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 12.5px;
+            padding: 14px;
+            vertical-align: top;
+        }
+
+        .patch-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 9px;
+            font-weight: 600;
+            padding: 3px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        .badge.sec { background-color: #fee2e2; color: #b91c1c; }
+        .badge.priv { background-color: #ffedd5; color: #c2410c; }
+        .badge.leg { background-color: #e0f2fe; color: #0369a1; }
+
+        /* ==================== 6. COMMON FOOTER SYSTEM ==================== */
+        .slide-footer {
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            margin-top: 24px;
+            width: 100%;
+        }
+
+        .footer-brand {
+            align-items: center;
+            color: #64748b;
+            display: flex;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            gap: 8px;
+        }
+
+        .footer-brand i {
+            color: #1e3a8a;
+        }
+
+        .slide-number {
+            color: #94a3b8;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: AUDIT & DISCOVERY BASELINE -->
+<div class="slide-container" id="slide1">
+    <!-- Top consistent title frame -->
+    <div class="slide-header">
+        <div class="slide-title-area">
+            <span class="slide-pretitle">Phase 1: Discovery Baseline</span>
+            <h2 class="slide-title">Executive Audit: Verified Risk Baseline</h2>
+        </div>
+        <div class="slide-meta">
+            DATA AUDIT SOURCE:<br>
+            BCLeg_datafiles_updated.xlsx
+        </div>
+    </div>
+
+    <!-- Main visual + analysis grid -->
+    <div class="content-area">
+        <div class="grid-2">
+            <!-- Left-side structural executive bullet points -->
+            <div class="executive-panel">
+                <div class="panel-heading">
+                    <i class="fa-solid fa-square-poll-horizontal"></i> Core Verification Findings
+                </div>
+                
+                <!-- Empirical Data KPI Block -->
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <div class="kpi-val">448</div>
+                        <div class="kpi-label">SIN Files</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-val">3,300</div>
+                        <div class="kpi-label">Stale PII Files</div>
+                    </div>
+                    <div class="kpi-card" style="border-left-color: #0d9488;">
+                        <div class="kpi-val">E7</div>
+                        <div class="kpi-label">Required Sku</div>
+                    </div>
+                </div>
+
+                <ul class="bullet-list">
+                    <li>
+                        <strong>SIN Files Isolated:</strong> Verified exactly <strong>448 files containing SINs</strong> (disproving raw, unvetted matching logs claiming 847 files).
+                    </li>
+                    <li>
+                        <strong>Licensing Realities:</strong> Baseline indicates 3 service accounts are on E3, 3 active users remain on legacy E5, and 3 disabled users are queued for cleanup.
+                    </li>
+                    <li>
+                        <strong>Dark Data Exposure (S-022):</strong> Old records repository contains over 28,900 inactive items unchanged since 2014, leaving 3,300 PII records unprotected.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right-side graphic embedding the real local chart verbatim -->
+            <div class="image-wrapper">
+                <img alt="Pre-mitigation Copilot Access Exposure Map" src="Viz3_Current label_affected sites and files payload.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom consistent brand frame -->
+    <div class="slide-footer">
+        <div class="footer-brand">
+            <i class="fa-solid fa-building-columns"></i>
+            <span>Legislative Assembly of British Columbia — ITD</span>
+        </div>
+        <span class="slide-number">Slide 1 of 3</span>
+    </div>
+</div>
+
+
+<!-- SLIDE 2: PROPOSED TAXONOMY MATRIX -->
+<div class="slide-container" id="slide2">
+    <!-- Top consistent title frame -->
+    <div class="slide-header">
+        <div class="slide-title-area">
+            <span class="slide-pretitle">Phase 2: Governance Mapping</span>
+            <h2 class="slide-title">Target State: LABC Sensitivity Matrix</h2>
+        </div>
+        <div class="slide-meta">
+            TAXONOMY GUIDELINE:<br>
+            INFORMATION_PROTECTION.pptx
+        </div>
+    </div>
+
+    <!-- Main four-column card layout -->
+    <div class="content-area">
+        <div class="tiled-grid">
+            <!-- Restricted Column -->
+            <div class="policy-tile restricted">
+                <div class="tile-header">
+                    <span class="tile-tag">Tier 1</span>
+                    <h3 class="tile-name">Restricted</h3>
+                    <p class="tile-desc">Grave Harm risk. Includes legal opinions, closed-door minutes, cabinet briefs, and system runbooks.</p>
+                </div>
+                <div class="tile-action">
+                    <i class="fa-solid fa-ban" style="color: #dc2626;"></i> Exclude from Index
+                </div>
+            </div>
+
+            <!-- Confidential Column -->
+            <div class="policy-tile confidential">
+                <div class="tile-header">
+                    <span class="tile-tag">Tier 2</span>
+                    <h3 class="tile-name">Confidential</h3>
+                    <p class="tile-desc">Serious Harm risk. Includes active contracts, HR files, financial audits, and RFP drafts.</p>
+                </div>
+                <div class="tile-action">
+                    <i class="fa-solid fa-shield-halved" style="color: #ea580c;"></i> AI Label Inheritance
+                </div>
+            </div>
+
+            <!-- Internal Column -->
+            <div class="policy-tile internal">
+                <div class="tile-header">
+                    <span class="tile-tag">Tier 3</span>
+                    <h3 class="tile-name">Internal</h3>
+                    <p class="tile-desc">Standard business records, administrative logs, internal procedures, and directory lists.</p>
+                </div>
+                <div class="tile-action">
+                    <i class="fa-solid fa-lock" style="color: #0284c7;"></i> Restricted Sharing
+                </div>
+            </div>
+
+            <!-- Public Column -->
+            <div class="policy-tile public">
+                <div class="tile-header">
+                    <span class="tile-tag">Tier 4</span>
+                    <h3 class="tile-name">Public</h3>
+                    <p class="tile-desc">Approved media statements, public recruitment briefs, and Hansard legislative transcripts.</p>
+                </div>
+                <div class="tile-action">
+                    <i class="fa-solid fa-earth-americas" style="color: #059669;"></i> Fully Ingested
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom consistent brand frame -->
+    <div class="slide-footer">
+        <div class="footer-brand">
+            <i class="fa-solid fa-building-columns"></i>
+            <span>Legislative Assembly of British Columbia — ITD</span>
+        </div>
+        <span class="slide-number">Slide 2 of 3</span>
+    </div>
+</div>
+
+
+<!-- SLIDE 3: STATUTORY & ETHICAL MITIGATION -->
+<div class="slide-container" id="slide3">
+    <!-- Top consistent title frame -->
+    <div class="slide-header">
+        <div class="slide-title-area">
+            <span class="slide-pretitle">Phase 3: Security &amp; Compliance</span>
+            <h2 class="slide-title">Ethics, Privacy &amp; Emergency Actions</h2>
+        </div>
+        <div class="slide-meta">
+            REGULATORY COMPLIANCE:<br>
+            BC FOIPPA Section 30 Enforcement
+        </div>
+    </div>
+
+    <!-- Main compliance split grid -->
+    <div class="content-area">
+        <div class="grid-2">
+            <!-- Left-side Emergency Remediation Table -->
+            <div class="executive-panel">
+                <div class="panel-heading" style="margin-bottom: 12px;">
+                    <i class="fa-solid fa-triangle-exclamation" style="color: #b91c1c;"></i> Emergency Compliance Patches
+                </div>
+                <table class="patch-table">
+                    <thead>
+                        <tr>
+                            <th>Site Asset</th>
+                            <th>Threat Vector</th>
+                            <th>Mitigation Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Site S-009</strong><br>IT Runbooks</td>
+                            <td><span class="badge sec">Credential Leak</span></td>
+                            <td>Purge plain-text keys; migrate runbooks to secure vault and exclude S-009 from index.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Site S-022</strong><br>Old Records</td>
+                            <td><span class="badge priv">PII Spillage</span></td>
+                            <td>Revoke anonymous links; apply &#34;Restricted&#34; label to isolate 3.3k historical records.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Site S-006</strong><br>Legal Opinions</td>
+                            <td><span class="badge leg">Privilege Risk</span></td>
+                            <td>Disable external sharing; apply &#34;Restricted-Legal&#34; to protect solicitor immunity.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Right-side ethical review panel -->
+            <div class="executive-panel" style="border-left: 2px solid #e2e8f0; padding-left: 30px;">
+                <div class="panel-heading" style="color: #b91c1c;">
+                    <i class="fa-solid fa-user-slash" style="color: #b91c1c;"></i> Refusal of Individual Surveillance
+                </div>
+                <ul class="bullet-list">
+                    <li>
+                        <strong>Watchlist Request:</strong> Generate a &#34;top 10 list&#34; of users accessing personal/HR folders to target behavioral habits.
+                    </li>
+                    <li>
+                        <strong>Technical Failure:</strong> HR sites are handled collaboratively by teams; volume tracking is mathematically inaccurate.
+                    </li>
+                    <li>
+                        <strong>Statutory Breach:</strong> Conducting targeted employee tracking without formal policy violates basic fair monitoring and **breaches BC FOIPPA limits**.
+                    </li>
+                    <li>
+                        <strong>Approved Solution:</strong> Deploy standard, non-identifying parameters to audit sites, backed by pro-active organization privacy training.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom consistent brand frame -->
+    <div class="slide-footer">
+        <div class="footer-brand">
+            <i class="fa-solid fa-building-columns"></i>
+            <span>Legislative Assembly of British Columbia — ITD</span>
+        </div>
+        <span class="slide-number">Slide 3 of 3</span>
+    </div>
+</div>
+
+</body></html>
