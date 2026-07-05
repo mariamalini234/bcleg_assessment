@@ -7,20 +7,23 @@ The complete analysis, data remediation pipeline, and compliance visualizations 
 
 **To clone this repository and reproduce all structural data clean-up operations and visualizations from scratch, execute the following commands:
 
-1. Set up the Environment:
+* **1. Set up the Environment:**
 Ensure you have Python 3.10+ and a local terminal or Jupyter environment ready. 
 Clone the repository and install the verified tracking dependencies:
+
 Bashgit clone https://github.com/mariamalini234/bcleg_assessment.git
+
 cd bcleg_assessment
+
 pip install pandas matplotlib seaborn openpyxl
 
-2. Repository File Structure:
+* **2. Repository File Structure:**
 To execute successfully, maintain the exact verbatim structure as set by the script:
 ./data/ — Location of raw csv files (site_inventory.csv, pii_detections.csv, sharing_links.csv, license_assignments.csv).
 ./src/ — Contains the processing python script or notebook execution (bcleg_src.py).
 ./output/ — Target directory where remediated files are automatically compiled.
 
-3. Run the Processing Script:
+* **3. Run the Processing Script:**
 Run the core programmatic routine to execute the data clean-up passes, generate the side-by-side blast-radius comparison charts, and map the content to INFORMATION_PROTECTION.pptx boundaries: 
 Bashpython src/bcleg_src.py
 The execution will automatically clean corrupted text strings, purge duplicate passes, force numeric conversions on match_count fields, map fragmented departments, and export the comprehensive classification matrix to /output/final_remediated_df.csv.
